@@ -4,9 +4,13 @@ function App() {
   return <div className="App"></div>;
 }
 
-function Logo() {}
+function Logo() {
+  return <h1>🌴Travel Away💼</h1>;
+}
 
-function Form() {}
+function Form() {
+  return <div className="add-form"></div>;
+}
 
 function PackingList() {}
 
