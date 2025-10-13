@@ -29,7 +29,13 @@ function Form() {
 }
 
 function PackingList() {
-  return <div className="list">List content</div>;
+  return (
+    <ul className="list">
+      {initialItems.map((item) => (
+        <Item item={item} />
+      ))}
+    </ul>
+  );
 }
 
 function Stats() {
