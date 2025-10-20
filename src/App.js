@@ -25,7 +25,7 @@ function Logo() {
   return <h1>🌴Travel Away💼</h1>;
 }
 
-function Form() {
+function Form({ onAddItems }) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
 
@@ -35,7 +35,7 @@ function Form() {
     const newItem = { description, quantity, packed: false, id: Date.now() };
     console.log(newItem);
 
-    handleAddItems(newItem);
+    onAddItems(newItem);
     setDescription("");
     setQuantity(1);
   }
