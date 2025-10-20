@@ -72,7 +72,7 @@ function PackingList({ items, onDeleteItem }) {
     <div className="list">
       <ul>
         {items.map((item) => (
-          <Item item={item} key={item.id} />
+          <Item item={item} onDeleteItem={onDeleteItem} key={item.id} />
         ))}
       </ul>
     </div>
@@ -85,7 +85,9 @@ function Item({ item, onDeleteItem }) {
       <span style={item.packed ? { textDecoration: "line-through" } : {}}>
         {item.quantity} {item.description}
       </span>
-      <button className="cross">❌</button>
+      <button className="cross" onClick={() => onDeleteItem(item.id)}>
+        ❌
+      </button>
     </li>
   );
 }
