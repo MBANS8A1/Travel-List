@@ -37,6 +37,7 @@ function App() {
         items={items}
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}
+        onClearList={handleClearList}
       />
       <Stats items={items} />
     </div>
@@ -84,7 +85,7 @@ function Form({ onAddItems }) {
   );
 }
 
-function PackingList({ items, onDeleteItem, onToggleItem }) {
+function PackingList({ items, onDeleteItem, onToggleItem, onClearList }) {
   const [sortBy, setSortBy] = useState("input");
 
   let sortedItems;
@@ -120,7 +121,7 @@ function PackingList({ items, onDeleteItem, onToggleItem }) {
           <option value="description">Sort by description</option>
           <option value="packed">Sort by packed status</option>
         </select>
-        <button>Clear List</button>
+        <button onClick={onClearList}>Clear List</button>
       </div>
     </div>
   );
@@ -159,7 +160,7 @@ function Stats({ items }) {
       <em>
         {percentage === 100
           ? "You got everything. You're ready to travel ✈️"
-          : `💼 You have ${numItems} items on your list and you already packed {$numPacked} (${percentage}%)`}
+          : `💼 You have ${numItems} items on your list and you already packed ${numPacked} (${percentage}%)`}
       </em>
     </footer>
   );
