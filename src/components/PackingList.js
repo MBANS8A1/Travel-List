@@ -35,7 +35,6 @@ export default function PackingList({
           />
         ))}
       </ul>
-      {/*Will add styling to actions */}
       <div className="actions">
         <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
           <option value="input">Sort by input order</option>
